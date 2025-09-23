@@ -1,0 +1,25 @@
+Voici les commande de base a savoir pour debuter docker
+
+    docker -v - Pour voir la version de docker
+
+    docker start <nom_conteneur> - Démarrer un conteneur existant
+
+    docker stop <nom_conteneur> - Arrêter un conteneur
+
+    docker restart <nom_conteneur> - Redémarrer un conteneur
+
+    docker pause <nom_conteneur> - Mettre en pause
+
+    docker unpause <nom_conteneur> - Reprendre
+
+    docker ps - Lister les conteneurs en cours
+
+    docker ps -a - Lister tous les conteneurs (même arrêtés)
+
+    docker logs <conteneur> - Afficher les logs
+
+    docker stats - Statistiques en temps réel
+
+    docker top <conteneur> - Processus en cours dans le conteneur
+
+    docker pull <image> - Télécharger une image
