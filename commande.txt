@@ -1,0 +1,6 @@
+# Commamde docker essentielles
+docker --version
+docker ps
+docker images
+docker build -t mon-image .
+docker run -d --name mon-container mon-image
