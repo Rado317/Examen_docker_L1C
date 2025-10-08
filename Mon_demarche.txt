@@ -1,1 +1,85 @@
+voay@debian:~$ mkdir Examen_docker
+mkdir: impossible de créer le répertoire « Examen_docker »: Le fichier existe
+voay@debian:~$ mkdir Examen_docker_L1C
+voay@debian:~$ cd Examen_docker_L1C
+voay@debian:~/Examen_docker_L1C$ mkdir ToDoList
+voay@debian:~/Examen_docker_L1C$ touch commande_de_base.txt
+voay@debian:~/Examen_docker_L1C$ git init
+astuce: Utilisation de 'master' comme nom de la branche initiale. Le nom de la branche
+astuce: par défaut peut changer. Pour configurer le nom de la branche initiale
+astuce: pour tous les nouveaux dépôts, et supprimer cet avertissement, lancez :
+astuce: 
+astuce:         git config --global init.defaultBranch <nom>
+astuce: 
+astuce: Les noms les plus utilisés à la place de 'master' sont 'main', 'trunk' et
+astuce: 'development'. La branche nouvellement créée peut être rénommée avec :
+astuce: 
+astuce:         git branch -m <nom>
+Dépôt Git vide initialisé dans /home/voay/Examen_docker_L1C/.git/
+voay@debian:~/Examen_docker_L1C$ git status
+Sur la branche master
 
+Aucun commit
+
+Fichiers non suivis:
+  (utilisez "git add <fichier>..." pour inclure dans ce qui sera validé)
+        commande_de_base.txt
+
+aucune modification ajoutée à la validation mais des fichiers non suivis sont présents (utilisez "git add" pour les suivre)
+voay@debian:~/Examen_docker_L1C$ git add commande_de_base.txt
+voay@debian:~/Examen_docker_L1C$ git status
+Sur la branche master
+
+Aucun commit
+
+Modifications qui seront validées :
+  (utilisez "git rm --cached <fichier>..." pour désindexer)
+        nouveau fichier : commande_de_base.txt
+
+voay@debian:~/Examen_docker_L1C$ echo "# Examen_docker_L1C" > README.md
+voay@debian:~/Examen_docker_L1C$ echo "# Projet déxamen docker" >> README.md
+voay@debian:~/Examen_docker_L1C$ echo "### Fichiers :" >> README.md
+voay@debian:~/Examen_docker_L1C$ echo "- commande.txt : Liste des commandes de base de docker" >> README.md
+voay@debian:~/Examen_docker_L1C$ echo "- ToDoList/ : Dossier des taches a faire" >> README.md
+voay@debian:~/Examen_docker_L1C$ cat > commande.txt << EOF
+> # Commamde docker essentielles
+> docker --version
+> docker ps
+> docker images
+> docker build -t mon-image .
+> docker run -d --name mon-container mon-image
+> EOF
+voay@debian:~/Examen_docker_L1C$ echo "# Liste des taches" >> ToDoList/index.html
+voay@debian:~/Examen_docker_L1C$ git add .
+voay@debian:~/Examen_docker_L1C$ git commit -m "Initialisation porjet Examen_docker avec sructure de base"
+[master (commit racine) c2d2eec] Initialisation porjet Examen_docker avec sructure de base
+ 4 files changed, 12 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 ToDoList/index.html
+ create mode 100644 commande.txt
+ create mode 100644 commande_de_base.txt
+voay@debian:~/Examen_docker_L1C$ git remote add origin https://github.com/Rado317/Examen_docker_L1C.git
+voay@debian:~/Examen_docker_L1C$ git branch -M main
+voay@debian:~/Examen_docker_L1C$ git push -u origin main
+Username for 'https://github.com': Rado317
+Password for 'https://Rado317@github.com': 
+Énumération des objets: 7, fait.
+Décompte des objets: 100% (7/7), fait.
+Compression par delta en utilisant jusqu'à 4 fils d'exécution
+Compression des objets: 100% (4/4), fait.
+Écriture des objets: 100% (7/7), 661 octets | 661.00 Kio/s, fait.
+Total 7 (delta 0), réutilisés 0 (delta 0), réutilisés du pack 0
+To https://github.com/Rado317/Examen_docker_L1C.git
+ * [new branch]      main -> main
+la branche 'main' est paramétrée pour suivre 'origin/main'.
+voay@debian:~/Examen_docker_L1C$ git remote -v
+origin  https://github.com/Rado317/Examen_docker_L1C.git (fetch)
+origin  https://github.com/Rado317/Examen_docker_L1C.git (push)
+voay@debian:~/Examen_docker_L1C$ git status
+Sur la branche main
+Votre branche est à jour avec 'origin/main'.
+
+rien à valider, la copie de travail est propre
+voay@debian:~/Examen_docker_L1C$ git log --oneline
+c2d2eec (HEAD -> main, origin/main) Initialisation porjet Examen_docker avec sructure de base
+voay@debian:~/Examen_docker_L1C$ 
