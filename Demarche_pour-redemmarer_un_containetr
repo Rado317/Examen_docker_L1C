@@ -1,0 +1,12 @@
+voay@debian:~/Examen_docker_L1C$ docker ps -a
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/containers/json?all=1": dial unix /var/run/docker.sock: connect: permission denied
+voay@debian:~/Examen_docker_L1C$ su
+Mot de passe : 
+root@debian:/home/voay/Examen_docker_L1C# docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED      STATUS                    PORTS                                   NAMES
+c6ccccb2a819   todolist-app   "/docker-entrypoint.…"   3 days ago   Exited (255) 2 days ago   0.0.0.0:8080->80/tcp, :::8080->80/tcp   todolist-container
+root@debian:/home/voay/Examen_docker_L1C# docker start todolist-container
+todolist-container
+root@debian:/home/voay/Examen_docker_L1C# docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED      STATUS              PORTS                                   NAMES
+c6ccccb2a819   todolist-app   "/docker-entrypoint.…"   3 days ago   Up About a minute   0.0.0.0:8080->80/tcp, :::8080->80/tcp   todolist-container
